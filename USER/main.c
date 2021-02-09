@@ -6,6 +6,7 @@
 #include "usart.h"
 #include "24cxx.h"
 #include "max6675.h"
+#include "pid.h"
 
 /************************************************
 PID ¿ØÖÆÊµÑé
