@@ -33,14 +33,14 @@ u16 read_max6675() //????
     return d;
 }
 
-void read_temper() //??????
+void read_temper() //读取温度值
 {
     u16 d;
     if (Kms10 < 20)
         return;
 
     d = read_max6675(); //读取MAX6675当前的温度值
-                        //pid.Pv=((d>>4)&0x0fff)*0.25;//????
+    //pid.Pv=((d>>4)&0x0fff)*0.25;
     Kms10 = 0;
 }
 

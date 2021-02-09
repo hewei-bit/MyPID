@@ -47,10 +47,14 @@ int main(void)
 	Max6675_Init();
 	AT24CXX_Write(0,(u8*)TEXT_Buffer,SIZE);
 	AT24CXX_Read(0,datatemp,SIZE);
-    LCD_ShowString(30, 50, 200, 16, 16, "PID TEST");
+	LCD_ShowString(30, 80, 200, 16, 16, datatemp);
+    LCD_ShowString(30, 50, 200, 16, 16, (u8 *)"PID TEST");
 
     while (1)
     {
+		read_temper(); 
+		
+		
     }
 }
 
