@@ -1,6 +1,6 @@
 #include "max6675.h"
 #include "delay.h"
-//#include "pid.h"
+#include "pid.h"
 
 float temper;
 extern u16 Kms10;
@@ -21,12 +21,10 @@ u16 read_max6675() //????
     delay_us(2);
     for (i = 0; i < 16; i++)
     {
-        sck_1;
-        delay_us(2);
-        sck_0;
-        delay_us(2);
+        sck_1;  delay_us(2);
+        sck_0;  delay_us(2);
         d <<= 1;
-        if (so)
+        if(so)
             d++;
     }
     cs_1;
@@ -40,7 +38,7 @@ void read_temper() //读取温度值
         return;
 
     d = read_max6675(); //读取MAX6675当前的温度值
-    //pid.Pv=((d>>4)&0x0fff)*0.25;
+    pid.Pv=((d>>4)&0x0fff)*0.25;
     Kms10 = 0;
 }
 

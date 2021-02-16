@@ -12,6 +12,7 @@
 PID 控制实验
 作者：何蔚
 IO引脚分配如下
+    PIDout      ----    PB8
 	MAX6675 
 		PD2 	---- 	SCK
 		PC12 	---- 	SO
@@ -35,6 +36,7 @@ u16 Kms10;
 const u8 TEXT_Buffer[] = {"PID TEST"};
 #define SIZE sizeof(TEXT_Buffer)
 
+
 int main(void)
 {
 	u16 i=0;
@@ -46,6 +48,10 @@ int main(void)
     NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2); //设置中断优先级分组为组2：2位抢占优先级，2位响应优先级
     uart_init(115200);                              //串口初始化为115200
 	Max6675_Init();
+    PID_Init();
+	PIDOUT_init();
+
+
 	AT24CXX_Write(0,(u8*)TEXT_Buffer,SIZE);
 	AT24CXX_Read(0,datatemp,SIZE);
 	LCD_ShowString(30, 80, 200, 16, 16, datatemp);
@@ -55,7 +61,7 @@ int main(void)
     {
 		read_temper(); 
 		
-		
+
     }
 }
 

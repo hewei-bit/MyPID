@@ -1,8 +1,8 @@
-
 #include "time_init.h"
 
 #include "stm32f10x_conf.h"
 #include "led.h"
+#include "pid.h"
 
 extern u16 Kms10;
 
@@ -69,9 +69,9 @@ void TIM3_IRQHandler(void) //TIM3中断 1ms 1次
     st = TIM_GetFlagStatus(TIM3, TIM_IT_Update);
     if (st != 0)
     {
-        //pid.C10ms++;
+        pid.C10ms++;
         TIM_ClearFlag(TIM3, TIM_IT_Update);
-        //PID_out(); //输出PID运算结果到负载
+        PID_out(); //输出PID运算结果到负载
     }
 }
 

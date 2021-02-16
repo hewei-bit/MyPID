@@ -1,0 +1,16 @@
+{
+    "files.associations": {
+        "pid.h": "c"
+    },
+   
+  "editor.fontSize": 16,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.autoSave": "afterDelay",
+  "workbench.colorTheme": "Default Dark+",
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "window.zoomLevel": 0,
+  "editor.formatOnSave": false,
+
+}
