@@ -1,8 +1,10 @@
 # MyPID
 基于PID算法的温控系统（基于STM32f103）
 
-IO引脚分配如下
-    PIDout      ----    PB8
+IO引脚分配如下：
+    
+    
+    	PIDout      ----    PB8
 	MAX6675 
 		PD2 	---- 	SCK
 		PC12 	---- 	SO
