@@ -52,7 +52,6 @@ int main(void)
     PID_Init();
 	PIDOUT_init();
 
-
 	AT24CXX_Write(0,(u8*)TEXT_Buffer,SIZE);
 	AT24CXX_Read(0,datatemp,SIZE);
 	LCD_ShowString(30, 30, 200, 16, 16, datatemp);
