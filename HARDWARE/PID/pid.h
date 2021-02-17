@@ -9,10 +9,12 @@ typedef struct
 {
     float Sv; //用户设定值
     float Pv; //传感器反馈值
+    
     float Kp; //PID算法系数
     float Ti; //采样总时长
     float Td; //采样时间间隔
     float T;  //PID计算周期--采样周期
+
     float Ek;   //本次偏差
     float Ek_1; //上次偏差
     float Sek;  //历史偏差之和

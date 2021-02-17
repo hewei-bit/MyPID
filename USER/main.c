@@ -11,7 +11,8 @@
 /************************************************
 PID 控制实验
 作者：何蔚
-IO引脚分配如下
+IO引脚分配如下:
+
     PIDout      ----    PB8
 	MAX6675 
 		PD2 	---- 	SCK
@@ -54,17 +55,21 @@ int main(void)
 
 	AT24CXX_Write(0,(u8*)TEXT_Buffer,SIZE);
 	AT24CXX_Read(0,datatemp,SIZE);
-	LCD_ShowString(30, 80, 200, 16, 16, datatemp);
+	LCD_ShowString(30, 30, 200, 16, 16, datatemp);
     LCD_ShowString(30, 50, 200, 16, 16, (u8 *)"PID TEST");
-
+    LCD_ShowString(30, 70, 200, 16, 16, (u8 *)"当前值:");
+    LCD_ShowString(30, 90, 200, 16, 16, (u8 *)"设定值:");
+    LCD_ShowString(30, 110, 200, 16, 16, (u8 *)"PIDOUT:");
     while (1)
     {
 		read_temper(); 
-		
-
+		PId_calc();
+        LCD_ShowxNum(86,70,pid.Sv,16,16,0);
+        LCD_ShowxNum(86,50,pid.Pv,16,16,0);
+        LCD_ShowxNum(86,90,pid.OUT,16,16,0);
+        
+        //Display()
     }
 }
 
-#if 0
 
-#endif
