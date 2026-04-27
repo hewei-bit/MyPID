@@ -6,7 +6,7 @@
   "editor.fontSize": 16,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "files.autoSave": "afterDelay",
-  "workbench.colorTheme": "Default Dark+",
+  "workbench.colorTheme": "Dark+",
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
